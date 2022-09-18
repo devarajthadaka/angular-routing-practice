@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PostDetailsService } from '../post-details.service';
+import { PostsService } from '../posts.service';
 
 @Component({
   selector: 'app-post-details',
@@ -12,7 +12,7 @@ export class PostDetailsComponent implements OnInit {
   details:any;
   postId: string | number;
 
-  constructor(private api:PostDetailsService, private activateroute:ActivatedRoute) { }
+  constructor(private api:PostsService, private activateroute:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.activateroute.paramMap.subscribe(params=>{
