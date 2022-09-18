@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <ul class="list-group" style="width: 90%; overflow-y:auto">
+                <li class="list-group-item" [routerLink]="['/photo-details', item.thumbnailUrl]" *ngFor="let item of photos">
+                    <h4>{{item.title}}</h4>
+                    <img [src]="item.thumbnailUrl" [alt]="item.title"/>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>

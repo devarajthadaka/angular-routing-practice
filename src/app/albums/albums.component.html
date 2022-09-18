@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+           <table class="table table-condensed"  style="max-height:500px; overflow-y:auto">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>title</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr [routerLink]="['/albums-details', item.title]"*ngFor="let item of albums" class="back">
+                    <td>{{item.id}}</td>
+                    <td>{{item.title}}</td>
+                </tr>
+            </tbody>
+           </table>
+        </div>
+    </div>
+</div>

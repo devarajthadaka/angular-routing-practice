@@ -1,0 +1,23 @@
+<div class="container">
+    <p [routerLink]="['/posts']" style="color: lightblue;" class="goback">-- go back</p>
+    <div class="row">
+        <div class="col-sm-6">
+            <table class="table table-condensed" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>title</th>
+                        <th>body</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngIf="details">
+                        <td>{{details.id}}</td>
+                        <td>{{details.title}}</td>
+                        <td>{{details.body}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
