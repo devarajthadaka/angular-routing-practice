@@ -11,9 +11,9 @@ export class AlbumsService {
   url = "https://jsonplaceholder.typicode.com/albums";
 
   getAlbums(){
-    return this.http.get('url');
+    return this.http.get(this.url);
   }
   getAlbumsDetails(albumId){
-    return this.http.get('url' + albumId);
+    return this.http.get(`${this.url}/${albumId}`);
   }
 }

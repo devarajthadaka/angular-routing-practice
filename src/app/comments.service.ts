@@ -6,12 +6,14 @@ import { Injectable } from '@angular/core';
 })
 export class CommentsService {
 
+  url = "https://jsonplaceholder.typicode.com/comments";
+
   constructor(private http:HttpClient) { }
 
   getComments(){
-    return this.http.get('https://jsonplaceholder.typicode.com/comments');
+    return this.http.get(this.url);
   }
   getCommentDetails(commentName){
-    return this.http.get('https://jsonplaceholder.typicode.com/comments' + commentName);
+    return this.http.get(`${this.url}/${commentName}`);
   }
 }

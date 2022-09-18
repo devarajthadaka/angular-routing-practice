@@ -6,12 +6,14 @@ import { Injectable } from '@angular/core';
 })
 export class PhotosService {
 
+  url = "https://jsonplaceholder.typicode.com/photos";
+
   constructor(private http:HttpClient) { }
 
   getPhotos(){
-    return this.http.get('https://jsonplaceholder.typicode.com/photos');
+    return this.http.get(this.url);
   }
   getPhotosDetails(photoId){
-    return this.http.get('https://jsonplaceholder.typicode.com/photos' + photoId);
+    return this.http.get(`${this.url}/${photoId}`);
   }
 }
