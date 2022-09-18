@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AlbumsDetailsService } from '../albums-details.service';
+import { AlbumsService } from '../albums.service';
 
 @Component({
   selector: 'app-albums-details',
@@ -12,7 +12,7 @@ export class AlbumsDetailsComponent implements OnInit {
 albumsDetails:any=[];
 albumId:string | number;
 
-constructor(private api:AlbumsDetailsService, private activaeroute:ActivatedRoute) { }
+constructor(private api:AlbumsService, private activaeroute:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.activaeroute.paramMap.subscribe(params=>{

@@ -18,11 +18,15 @@ export class PostDetailsComponent implements OnInit {
     this.activateroute.paramMap.subscribe(params=>{
       this.postId = params.get('id') || null
     })
+    this.getDetails();
+   }
+  getDetails(){
     this.api.getDetails(this.postId).subscribe(res=>{
       console.log(res);
       this.details=res;
       console.log(this.details);
+    },error=>{
+      console.log(error);
     })
   }
-
 }

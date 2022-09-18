@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CommentDetailsService } from '../comment-details.service';
+import { CommentsService } from '../comments.service';
 
 @Component({
   selector: 'app-comments-details',
@@ -12,7 +12,7 @@ export class CommentsDetailsComponent implements OnInit {
   commentDetails:any=[];
   commentName:string | number;
 
-  constructor(private api:CommentDetailsService , private activateroute:ActivatedRoute) { }
+  constructor(private api:CommentsService , private activateroute:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.activateroute.paramMap.subscribe(params=>{

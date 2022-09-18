@@ -11,4 +11,7 @@ export class CommentsService {
   getComments(){
     return this.http.get('https://jsonplaceholder.typicode.com/comments');
   }
+  getCommentDetails(commentName){
+    return this.http.get('https://jsonplaceholder.typicode.com/comments' + commentName);
+  }
 }

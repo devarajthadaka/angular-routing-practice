@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PhotoDetailsService } from '../photo-details.service';
+import { PhotosService } from '../photos.service';
 
 @Component({
   selector: 'app-photo-details',
@@ -12,7 +12,7 @@ export class PhotoDetailsComponent implements OnInit {
   photoDetails:any=[];
   photoId: string | number;
 
-  constructor(private api:PhotoDetailsService , private acticateroute:ActivatedRoute) { }
+  constructor(private api:PhotosService , private acticateroute:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.acticateroute.paramMap.subscribe(params=>{

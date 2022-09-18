@@ -8,15 +8,20 @@ import { PostsService } from '../posts.service';
 })
 export class PostsComponent implements OnInit {
 
-  posts:any=[];
+  posts: any = [];
 
-  constructor(private api:PostsService) { }
+  constructor(private api: PostsService) { }
 
   ngOnInit(): void {
-    this.api.getPosts().subscribe(res=>{
+    this.getPosts();
+  }
+  getPosts() {
+    this.api.getPosts().subscribe(res => {
       console.log(res);
-      this.posts=res;
+      this.posts = res;
       console.log(this.posts);
+    }, error => {
+      console.log(error);
     })
   }
 

@@ -18,11 +18,15 @@ export class StatesComponent implements OnInit {
     this.activateroute.paramMap.subscribe(params=>{
       this.countryId=params.get('id') || null
     })
-    this.api.getStates(this.countryId).subscribe(res=>{
-      console.log(res);
-      this.states=res;
-      console.log(this.states);
-    })
+    this.getStates();
   }
-
+ getStates(){
+  this.api.getStates(this.countryId).subscribe(res=>{
+    console.log(res);
+    this.states=res;
+    console.log(this.states);
+  },error=>{
+    console.log(error);
+  })
+ }
 }
